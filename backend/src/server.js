@@ -1,6 +1,12 @@
     const express= require('express');
     const app= express();
+    const routes= require('./routes');
+    const cors= require('cors');
 
+    app.use(cors());
+    app.use(express.json());
+    app.use(routes);
+    
     const server= require('http').createServer(app);
     const io= require('socket.io')(server);
 
@@ -19,6 +25,9 @@ io.on('connection', socket => {
     });
 
 })
+
+server.listen(3030);
+
 
 
 //commit
@@ -49,8 +58,5 @@ io.on('connection', socket => {
 
     //     //io.emit();//Todos clientes
     // });
-
-    server.listen(3030);
-
 
 

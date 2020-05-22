@@ -25,7 +25,7 @@ const App = () => {
         return ()=> socket.off('chat.message', handleNewMessage);
         //Retorna so os dados especificos do handle, senao ele retorna tudo do array
     }, [messages]);
-
+    
     const handleFormSubmit = event => {
         event.preventDefault();
 
