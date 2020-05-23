@@ -27,7 +27,7 @@ const App = () => {
     }, [messages]);
     
     const handleFormSubmit = event => {
-        event.preventDefault();
+        event.preventDefault(); 
 
         if (message.trim()) {
             socket.emit('chat.message', {

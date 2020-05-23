@@ -20,11 +20,12 @@ module.exports={
         const user_id= req.headers.authorization;
         const room_id= req.params.id;
 
-        const response= await connection('users_room').insert({
+        const response= await connection('users_room')
+        .insert({
             user_id,
             room_id
-        });
+        })   
 
-        return res.json(response);
+        return res.json({user_id, room_id});
     }
 }

@@ -18,7 +18,7 @@ const Login= ()=>{
             //     user_name: response.data.name
             // } );
             localStorage.setItem('user_id', response.data.id);
-            localStorage.setItem('user_name', response.data.name);
+            //localStorage.setItem('user_name', response.data.name);
             history.push('/chat');
         }
         catch{

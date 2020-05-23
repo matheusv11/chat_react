@@ -24,8 +24,8 @@ module.exports={
 
     async create(req,res){
         const {name}= req.body;
-        const adm= req.headers.authorization;
-        const [response]= await connection('rooms').insert({name, adm});
+
+        const [response]= await connection('rooms').insert({name});
         res.json({id: response});
 
     },
